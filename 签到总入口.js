@@ -1,0 +1,8 @@
+require("领克签到.js")
+require("网易云签到.js")
+require("蔚来签到.js")
+require("蜗牛睡眠签到.js")
+require("喜马拉雅签到.js")
+require("掌上生活签到.js")
+require("大融城签到.js")
+toast("签到任务完成")
