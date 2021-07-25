@@ -1,0 +1,2 @@
+# autojsScripts
+scripts of autojs
