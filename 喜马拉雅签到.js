@@ -8,7 +8,7 @@ var flag = tools.antiWindow(appName)
 if (! flag) {
     tools.specialRetry("android.widget.ImageView", 11, 1, 0, 5)
     tools.specialRetry("android.widget.ImageView", 4, 3, 1, 5)
-    let pin = tools.antiWindow()
+    let pin = tools.antiWindow(appName)
     if (! pin) {
         log(appName + "新弹框需要手动处理")
         console.show()
