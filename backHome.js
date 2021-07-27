@@ -10,6 +10,7 @@ backHome.run = function () {
 
 try {
     module.exports = backHome
+    backHome.run()  // 导入后执行一次
 } catch (e) {
     backHome.run()
 }
