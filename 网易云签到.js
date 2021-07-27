@@ -16,8 +16,8 @@ tools.normalRetry(desc, "抽屉菜单", 0, num)
 
 // 点击签到
 tools.normalRetry(id, "container", 2, num)
-? toast(appName + "签到完成")
-: toast (appName + "签到失败")
+    ? toast(appName + "签到完成")
+    : toast (appName + "签到失败")
 sleep(3000)
 kill.run()
 backHome.run()
