@@ -15,8 +15,6 @@ function wechatShare() {
 var kill = require("./kill.js")
 var backHome = require("./backHome.js")
 var tools = require("./tools.js")
-const { normalClickRetry } = require("./tools.js")
-
 var appName = "LynkCo"
 var packageName = app.getPackageName(appName)
 app.launch(packageName)
@@ -27,9 +25,8 @@ for (let i=0; i<5; i++) {
 }
 // 点击分享
 click(540, 365)
-sleep(1500)
-tools.specialClickRetry("android.widget.FrameLayout", 12, 2, 1, 10)
-log("OK")
+sleep(3000)
+click(980, 2250)
 wechatShare()
 // 点击活动
 for (let i=0; i<5; i++) {
@@ -39,7 +36,7 @@ sleep(3000)
 click(540, 1200)
 sleep(3000)
 // 点击分享
-tools.specialClickRetry("android.view.View", 19, 0, 1, 10)
+click(970, 140)
 wechatShare()
 // 点击资讯
 for (let i=0; i<5; i++) {
@@ -48,7 +45,7 @@ for (let i=0; i<5; i++) {
 sleep(3000)
 click(540, 450)
 sleep(3000)
-tools.specialClickRetry("android.widget.FrameLayout", 15, 1, 0, 10)
+click(990, 2270)
 sleep(3000)
 // 点击分享
 click(980, 2280)
