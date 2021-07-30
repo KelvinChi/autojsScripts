@@ -15,21 +15,26 @@ for (let i=0; i<2; i++) {
     while (times > 0) {
         sleep(1000)
         if (text("微信").exists()) {
-            log("if")
             // 下划打开小程序窗口
             swipe(540, 600, 540, 1800, 100)
             tools.normalClickRetry(text, "大融城尊享会员", 1, 10)
             sleep(1000)
-            tools.specialClickRetry("android.widget.FrameLayout", 15, 3, 1, 10)
+            tools.normalClickRetry(text, "个人中心", 3, 10)
             tools.normalRetry(text, "签到", 4, 10)
-                ? toast("大融城" + i + "签到完成")
-                : toast ("大融城" + i + "签到失败")
+            sleep(1000)
+            if (text("立即签到").exists()) {
+                log("This")
+                tools.normalClickRetry(text, "立即签到", 2, 10)
+                    ? toast("大融城" + i + "签到完成")
+                    : toast ("大融城" + i + "签到失败")
+            } else {
+                toast(appName + "已签到")
+            }
             sleep(3000)
             kill.run()
             backHome.run()
             break
         } else {
-            log("else")
             times --
             if (id("ipt").exists()) {
                 // 判断是否在聊天页面，在则返回
