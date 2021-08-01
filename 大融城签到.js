@@ -2,7 +2,7 @@ var kill = require("./kill.js")
 var backHome = require("./backHome.js")
 var tools = require("./tools.js")
 
-for (let i=0; i<2; i++) {
+for (let i=1; i<2; i++) {
     var times = 10;
     var appName = "微信"
     var packageName = app.getPackageName(appName)
@@ -21,9 +21,8 @@ for (let i=0; i<2; i++) {
             sleep(1000)
             tools.normalClickRetry(text, "个人中心", 3, 10)
             tools.normalRetry(text, "签到", 4, 10)
-            sleep(1000)
+            sleep(2000)
             if (text("立即签到").exists()) {
-                log("This")
                 tools.normalClickRetry(text, "立即签到", 2, 10)
                     ? toast("大融城" + i + "签到完成")
                     : toast ("大融城" + i + "签到失败")
