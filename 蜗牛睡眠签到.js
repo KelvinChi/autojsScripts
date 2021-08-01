@@ -14,7 +14,7 @@ tools.normalClickRetry(text, "我的", 0, 10)
 // 点击积分
 tools.normalRetry(id, "rl_score_entry", 2, 10)
 while (! text("签到").exists() && ! text("签到成功").exists()) {
-    sleep(1000)
+    sleep(1500)
 }
 if (! text("签到成功").exists()) {
     // 点击签到
