@@ -21,8 +21,8 @@ while (! text("已签到").indexInParent(1).exists()
 if (! text("已签到").indexInParent(1).exists()) {
     tools.normalClickRetry(text, "去签到领京豆", 1, 10)
     tools.normalClickRetry(text, "签到领京豆", 0, 10)
-    ? toast(appName + "签到完成")
-    : toast (appName + "签到失败")
+        ? toast(appName + "签到完成")
+        : toast (appName + "签到失败")
     sleep(3000)
 } else {
     toast(appName + "已签到")
