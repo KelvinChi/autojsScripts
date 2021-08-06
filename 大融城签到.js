@@ -2,7 +2,7 @@ var kill = require("./kill.js")
 var backHome = require("./backHome.js")
 var tools = require("./tools.js")
 
-for (let i=1; i<2; i++) {
+for (let i=0; i<2; i++) {
     var times = 10;
     var appName = "微信"
     var packageName = app.getPackageName(appName)
@@ -15,6 +15,11 @@ for (let i=1; i<2; i++) {
     while (times > 0) {
         sleep(1000)
         if (text("微信").exists()) {
+            // 确保已经返回微信聊天页
+            for (let j=0; j<4; j++) {
+                swipe(200, 1200, 800, 1200, 100)
+                sleep(200)
+            }
             // 下划打开小程序窗口
             swipe(540, 600, 540, 1800, 100)
             tools.normalClickRetry(text, "大融城尊享会员", 1, 10)
@@ -35,7 +40,7 @@ for (let i=1; i<2; i++) {
             break
         } else {
             times --
-            if (id("ipt").exists()) {
+            if (id("ipt").exists() || text("订阅号消息").exists()) {
                 // 判断是否在聊天页面，在则返回
                 back()
             }
